@@ -1,100 +1,128 @@
 @import "../omarchy/current/theme/waybar.css";
 
-* {
-  background-color: @background;
-  color: @foreground;
+/* ====================================================
+   MATERIAL YOU / DYNAMIC COLOR CONFIGURATION
+   ==================================================== */
 
-  border: none;
-  border-radius: 20;
-  min-height: 0;
-  font-family: 'JetBrainsMono Nerd Font';
-  font-size: 12px;
+@define-color my-pill-bg alpha(@background, 0.4); 
+@define-color my-drawer-bg alpha(@foreground, 0.08);
+@define-color my-text @foreground; 
+@define-color my-accent @color4; 
+@define-color my-warning #f9e2af;
+@define-color my-critical #f38ba8;
+
+
+/* --- Base Bar --- */
+window#waybar {
+    background-color: transparent;
+    color: @my-text;
+    font-family: 'JetBrainsMono Nerd Font', sans-serif;
+    font-size: 13px;
 }
 
-.modules-left {
-  margin-left: 8px;
-}
-
+/* --- The Modern Floating Pills --- */
+.modules-left,
+.modules-center,
 .modules-right {
-  margin-right: 8px;
+    background-color: @my-pill-bg; 
+    border: 1px solid alpha(@foreground, 0.1); 
+    border-radius: 20px;
+    padding: 0px 14px; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    background-clip: padding-box;
 }
 
+/* --- Module Spacing inside Pills --- */
+#custom-omarchy, #workspaces, #custom-update, #clock, #mpris, #custom-media-icon,
+#network, #pulseaudio, #battery, #tray, 
+#custom-hw-expand, #cpu, #bluetooth, #backlight {
+    padding: 0 6px;
+    margin: 0px 2px;
+}
+
+/* --- The Arch Logo --- */
+#custom-omarchy {
+    color: @my-accent;
+    font-size: 18px; 
+    padding-right: 12px;
+    transition: all 0.3s ease;
+}
+
+/* --- Workspaces --- */
 #workspaces button {
-  all: initial;
-  padding: 0 6px;
-  margin: 0 1.5px;
-  min-width: 9px;
+    color: @my-text;
+    opacity: 0.6;
+    padding: 0 6px;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
-#workspaces button.empty {
-  opacity: 0.5;
+#workspaces button.active {
+    opacity: 1;
+    color: @my-accent; 
 }
 
-#cpu,
-#battery,
-#pulseaudio,
-#custom-omarchy,
-#custom-update {
-  min-width: 12px;
-  margin: 0 7.5px;
+#workspaces button:hover {
+    background: transparent;
+    opacity: 1;
+    color: @my-accent;
+    text-shadow: 0 0 5px alpha(@my-accent, 0.5);
 }
 
-#tray {
-  margin-right: 16px;
-}
-
-#bluetooth {
-  margin-right: 17px;
-}
-
-#network {
-  margin-right: 13px;
-}
-
-#custom-expand-icon {
-  margin-right: 18px;
-}
-
-tooltip {
-  padding: 2px;
-}
-
-#custom-update {
-  font-size: 10px;
-}
-
+/* --- Center Pill Adjustments --- */
 #clock {
-  margin-left: 8.75px;
+    font-weight: bold;
+    padding-left: 10px;
 }
 
-.hidden {
-  opacity: 0;
+#custom-media-icon {
+    color: @my-accent; 
+    font-size: 16px;
 }
 
+#mpris {
+    color: @my-accent;
+    font-weight: bold;
+}
+
+/* --- Omarchy Indicators --- */
 #custom-screenrecording-indicator,
 #custom-idle-indicator,
-#custom-notification-silencing-indicator {
-  min-width: 12px;
-  margin-left: 5px;
-  margin-right: 0;
-  font-size: 10px;
-  padding-bottom: 1px;
-}
-
-#custom-screenrecording-indicator.active {
-  color: #a55555;
-}
-
-#custom-idle-indicator.active,
-#custom-notification-silencing-indicator.active {
-  color: #a55555;
-}
-
+#custom-notification-silencing-indicator,
 #custom-voxtype {
-  min-width: 12px;
-  margin: 0 0 0 7.5px;
+    padding: 0 6px;
+    margin: 0;
+    font-size: 16px;
 }
 
+#custom-screenrecording-indicator.active,
+#custom-idle-indicator.active,
+#custom-notification-silencing-indicator.active,
 #custom-voxtype.recording {
-  color: #a55555;
+    color: @my-critical;
 }
+
+/* --- The Expandable Drawers --- */
+#group-hardware-drawer,
+#group-media-drawer {
+    background-color: @my-drawer-bg;
+    border-radius: 16px;
+    padding: 0 6px;
+    margin: 2px 4px;
+}
+
+#custom-hw-expand {
+    color: @my-text;
+    opacity: 0.8;
+}
+
+#backlight {
+    color: @my-warning;
+}
+
+/* --- Battery States --- */
+#battery.warning { color: @my-warning; }
+#battery.critical { color: @my-critical; }
