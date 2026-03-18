@@ -458,3 +458,17 @@
 2026-03-18T11:54:56 player: played "Headlights (feat. KIDDO)(MP3_128K).mp3"
 2026-03-18T11:57:02 ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
 2026-03-18T11:57:02 ffmpeg/aac: Could not update timestamps for skipped samples.
+2026-03-18T11:57:20 player: played "Monster.m4a"
+2026-03-18T11:57:20 ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+2026-03-18T11:57:20 ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+2026-03-18T12:00:07 player: played "Melody (Sigala ).m4a"
+2026-03-18T12:03:12 player: played "Arc North & Elle Vee - Back To Life (Official Lyric Video).mp3"
+2026-03-18T12:06:51 player: played "NURKO, Kyle Hume - Save Me (From Myself).opus"
+2026-03-18T12:09:44 player: played "Darci - On My Own (Official Audio)(MP3_128K).mp3"
+2026-03-18T12:12:28 player: played "Midnight Pizzeria (1).mp3"
+2026-03-18T12:12:39 player: played "Midnight Pizzeria (1).mp3"
+2026-03-18T12:13:20 player: played "Midnight Pizzeria (1).mp3"
+2026-03-18T12:15:54 player: played "Midnight Pizzeria (1).mp3"
+2026-03-18T12:18:37 player: played "Drugs.mp3"
+2026-03-18T12:22:06 player: played "Holy Forever - FingerStyle Version by Andre Cavalcante(1).mp3"
+2026-03-18T12:25:15 player: played "Rival, Cadmium, & Rosendale - Willow Tree.mp3"
