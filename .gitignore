@@ -1,0 +1,4 @@
+# MPD runtime files — change every song/session, not worth tracking
+base/.config/mpd/log
+base/.config/mpd/state
+base/.config/mpd/pid
