@@ -448,3 +448,13 @@
 2026-03-18T11:33:12 player: played "We_Don't_Talk_Anymore_(feat._Selena_Gomez)(128k).mp3"
 2026-03-18T11:35:12 exception: Failed to create /home/zynx/.config/mpd/state: No such file or directory
 2026-03-18T11:37:08 player: played "escapeitbasshouse.mp3"
+2026-03-18T11:43:17 ffmpeg/aac: Could not update timestamps for skipped samples.
+2026-03-18T11:43:36 player: played "Alley New edit 2.wav"
+2026-03-18T11:46:56 player: played "Parousia.m4a"
+2026-03-18T11:50:01 player: played "Ellis, Laura Brehm - Start Over.opus"
+2026-03-18T11:50:36 player: played "I Aint Worried - Whistle - Slowed - One Republic ! English.mp3"
+2026-03-18T11:52:17 player: played "KORDHELL - SCOPIN(MP3_128K).mp3"
+2026-03-18T11:54:16 ffmpeg/aac: Could not update timestamps for skipped samples.
+2026-03-18T11:54:56 player: played "Headlights (feat. KIDDO)(MP3_128K).mp3"
+2026-03-18T11:57:02 ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+2026-03-18T11:57:02 ffmpeg/aac: Could not update timestamps for skipped samples.
