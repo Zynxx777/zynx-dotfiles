@@ -1,0 +1,63 @@
+#![enable(implicit_some)]
+#![enable(unwrap_newtypes)]
+#![enable(unwrap_variant_newtypes)]
+(
+    background_color: "transparent",
+    header_background_color: "transparent",
+    modal_background_color: "black",
+    modal_backdrop: true,
+    text_color: "white",
+
+    borders_style: (fg: "black"),
+    highlight_border_style: (fg: "blue"),
+
+    highlighted_item_style: (fg: "blue", modifiers: "Bold"),
+    current_item_style: (fg: "black", bg: "blue", modifiers: "Bold"),
+
+    preview_label_style: (fg: "magenta"),
+    preview_metadata_group_style: (fg: "yellow", modifiers: "Bold"),
+
+    browser_column_widths: [25, 35, 40],
+
+    border_symbol_sets: {
+        "custom": (
+            parent: Rounded,
+            vertical_left: "│",
+            vertical_right: "│",
+            horizontal_top: "─",
+            horizontal_bottom: "─",
+        ),
+    },
+
+    progress_bar: (
+        symbols: ["━", "━", "⬤", "─", "━"],
+        track_style: (fg: "black"),
+        elapsed_style: (fg: "magenta"),
+        thumb_style: (fg: "magenta"),
+        use_track_when_empty: true,
+    ),
+
+    scrollbar: (
+        symbols: ["│", "█", "▲", "▼"],
+        track_style: (fg: "black"),
+        ends_style: (fg: "blue"),
+        thumb_style: (fg: "blue"),
+    ),
+    
+    symbols: (
+        song: "🎜",
+        dir: "📁",
+        marker: "»",
+        ellipsis: "…",
+        song_style: (fg: "blue"),
+        dir_style: (fg: "magenta"),
+    ),
+    
+    level_styles: (
+        info: (fg: "blue", bg: "black"),
+        warn: (fg: "yellow", bg: "black"),
+        error: (fg: "red", bg: "black"),
+        debug: (fg: "green", bg: "black"),
+        trace: (fg: "magenta", bg: "black"),
+    ),
+)

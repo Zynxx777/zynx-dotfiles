@@ -128,45 +128,82 @@
         album_sort_by: Date,
     ),
 
-    tabs: [
-        (
-            name: "Queue",
-            pane: Split(
-                direction: Horizontal,
-                panes: [
-                    (
-                        size: "25%",
-                        pane: Split(
-                            direction: Vertical,
-                            panes: [
-                                (size: "50%", pane: Pane(AlbumArt)),
-                                (size: "50%", pane: Pane(Cava)),
-                            ],
-                        ),
-                    ),
-                    (size: "75%", pane: Pane(Queue)),
-                ],
+    theme: "mocha",
+
+    components: {
+        "state_indicators": Pane(Property(
+            content: [
+                (kind: Property(Status(StateV2())), style: (fg: "magenta", modifiers: "Bold")),
+            ],
+            align: Center,
+        )),
+        
+        "volume": Pane(Property(
+            content: [
+                (kind: Text("VOL: "), style: (fg: "white", modifiers: "Dim")),
+                (kind: Property(Widget(Volume)), style: (fg: "blue", modifiers: "Bold")),
+            ],
+            align: Right,
+        )),
+
+        "custom_header": Split(
+            direction: Horizontal,
+            panes: [
+                (size: "15", pane: Component("state_indicators")),
+                (size: "100%", pane: Pane(Tabs)),
+                (size: "40", pane: Pane(Header)), // Built-in header (Repeat/Random) next to tabs
+                (size: "18", pane: Component("volume")),
+            ],
+        ),
+
+        "left_sidebar": Split(
+            direction: Vertical,
+            panes: [
+                (size: "50%", borders: "ALL", border_symbols: Library("custom"), pane: Pane(AlbumArt)),
+                (size: "50%", borders: "LEFT | RIGHT | BOTTOM", border_symbols: Library("custom"), pane: Pane(Cava)),
+            ],
+        ),
+    },
+
+    layout: Split(
+        direction: Vertical,
+        panes: [
+            (
+                size: "4",
+                borders: "ALL",
+                border_symbols: Library("custom"),
+                pane: Component("custom_header"),
             ),
-        ),
-        (
-            name: "Artists",
-            pane: Pane(Artists),
-        ),
-        (
-            name: "Albums",
-            pane: Pane(Albums),
-        ),
-        (
-            name: "Search",
-            pane: Pane(Search),
-        ),
-        (
-            name: "Directories",
-            pane: Pane(Directories),
-        ),
-        (
-            name: "Lyrics",
-            pane: Pane(Lyrics),
-        ),
+            (
+                size: "100%",
+                pane: Split(
+                    direction: Horizontal,
+                    panes: [
+                        (size: "30%", pane: Component("left_sidebar")),
+                        (
+                            size: "70%",
+                            borders: "TOP | RIGHT | BOTTOM",
+                            border_symbols: Library("custom"),
+                            pane: Pane(TabContent)
+                        ),
+                    ],
+                ),
+            ),
+            (
+                size: "3",
+                borders: "LEFT | RIGHT | BOTTOM",
+                border_symbols: Library("custom"),
+                pane: Pane(ProgressBar),
+            ),
+        ],
+    ),
+
+    tabs: [
+        (name: "Queue", pane: Pane(Queue)),
+        (name: "Artists", pane: Pane(Artists)),
+        (name: "Albums", pane: Pane(Albums)),
+        (name: "Search", pane: Pane(Search)),
+        (name: "Directories", pane: Pane(Directories)),
+        (name: "Lyrics", pane: Pane(Lyrics)),
     ],
 )
