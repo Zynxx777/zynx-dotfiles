@@ -1,0 +1,7 @@
+[Unit]
+Description=Update MPD Recently Added Playlist
+After=mpd.service
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/rmpc_recent_playlist.sh

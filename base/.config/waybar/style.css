@@ -16,7 +16,7 @@
 window#waybar {
     background-color: transparent;
     color: @my-text;
-    font-family: 'JetBrainsMono Nerd Font', sans-serif;
+    font-family: 'Adwaita Mono';
     font-size: 13px;
 }
 

@@ -32,7 +32,7 @@
     wrap_navigation: false,
     enable_mouse: true,
     status_update_interval_ms: 1000,
-    select_current_song_on_change: false,
+    select_current_song_on_change: true,
     browser_column_widths: [20, 38, 42],
     
     album_art: (
@@ -56,7 +56,8 @@
             "3":       SwitchToTab("Albums"),
             "4":       SwitchToTab("Search"),
             "5":       SwitchToTab("Directories"),
-            "6":       SwitchToTab("Lyrics"),
+            "6":       SwitchToTab("Playlists"),
+            "7":       SwitchToTab("Lyrics"),
             "q":       Quit,
             ">":       NextTrack,
             "p":       TogglePause,
@@ -167,6 +168,10 @@
         (
             name: "Directories",
             pane: Pane(Directories),
+        ),
+        (
+            name: "Playlists",
+            pane: Pane(Playlists),
         ),
         (
             name: "Lyrics",
