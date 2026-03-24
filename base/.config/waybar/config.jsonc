@@ -131,7 +131,11 @@
       "󰃠"
     ],
     "scroll-step": 5,
-    "tooltip": false
+    "tooltip": false,
+    "states": {
+      "high": 60,
+      "warning": 90
+    }
   },
   "cpu": {
     "interval": 5,

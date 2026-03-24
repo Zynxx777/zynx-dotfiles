@@ -2,8 +2,10 @@
 
 # File: ~/.local/bin/omarchy-gps.sh
 
+STATE_FILE="/tmp/waybar_gps_state"
+
 check_gps() {
-    if systemctl is-active --quiet gpsd || systemctl is-active --quiet gpsd.socket; then
+    if [ -f "$STATE_FILE" ]; then
         return 0
     else
         return 1
@@ -13,11 +15,11 @@ check_gps() {
 case "$1" in
     toggle)
         if check_gps; then
-            # Stop it
-            sudo systemctl stop gpsd.socket gpsd.service
+            rm -f "$STATE_FILE"
+            sudo systemctl stop gpsd.socket gpsd.service 2>/dev/null || true
         else
-            # Start it
-            sudo systemctl start gpsd.socket gpsd.service
+            touch "$STATE_FILE"
+            sudo systemctl start gpsd.socket gpsd.service 2>/dev/null || true
         fi
         ;;
     status)
