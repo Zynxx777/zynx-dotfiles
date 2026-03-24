@@ -35,7 +35,7 @@ window#waybar {
 /* --- Module Spacing inside Pills --- */
 #custom-omarchy, #workspaces, #custom-update, #clock, #mpris, #custom-media-icon,
 #network, #pulseaudio, #battery, #tray, 
-#custom-hw-expand, #cpu, #bluetooth, #backlight {
+#custom-hw-expand, #cpu, #bluetooth, #backlight, #custom-gps {
     padding: 0 6px;
     margin: 0px 2px;
 }
@@ -126,3 +126,7 @@ window#waybar {
 /* --- Battery States --- */
 #battery.warning { color: @my-warning; }
 #battery.critical { color: @my-critical; }
+
+/* --- GPS States --- */
+#custom-gps.on { color: @my-accent; }
+#custom-gps.off { opacity: 0.5; }
