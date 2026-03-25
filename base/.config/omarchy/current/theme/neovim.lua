@@ -1,56 +1,37 @@
 return {
-    {
-        "bjarneo/aether.nvim",
-        branch = "v2",
-        name = "aether",
-        priority = 1000,
-        opts = {
-            transparent = false,
-            colors = {
-                -- Background colors
-                bg = "#070506",
-                bg_dark = "#070506",
-                bg_highlight = "#836f79",
+	{
+		"bjarneo/aether.nvim",
+		name = "aether",
+		priority = 1000,
+		opts = {
+			disable_italics = false,
+			colors = {
+				-- Monotone shades (base00-base07)
+				base00 = "#181c1f", -- Default background
+				base01 = "#b18d85", -- Lighter background (status bars)
+				base02 = "#181c1f", -- Selection background
+				base03 = "#b18d85", -- Comments, invisibles
+				base04 = "#edbcb3", -- Dark foreground
+				base05 = "#fdf9f8", -- Default foreground
+				base06 = "#fdf9f8", -- Light foreground
+				base07 = "#edbcb3", -- Light background
 
-                -- Foreground colors
-                -- fg: Object properties, builtin types, builtin variables, member access, default text
-                fg = "#ffffff",
-                -- fg_dark: Inactive elements, statusline, secondary text
-                fg_dark = "#d9b6fd",
-                -- comment: Line highlight, gutter elements, disabled states
-                comment = "#836f79",
-
-                -- Accent colors
-                -- red: Errors, diagnostics, tags, deletions, breakpoints
-                red = "#b37580",
-                -- orange: Constants, numbers, current line number, git modifications
-                orange = "#d5aeb5",
-                -- yellow: Types, classes, constructors, warnings, numbers, booleans
-                yellow = "#e095b5",
-                -- green: Comments, strings, success states, git additions
-                green = "#648ed0",
-                -- cyan: Parameters, regex, preprocessor, hints, properties
-                cyan = "#7c93dd",
-                -- blue: Functions, keywords, directories, links, info diagnostics
-                blue = "#979fec",
-                -- purple: Storage keywords, special keywords, identifiers, namespaces
-                purple = "#cd9dcf",
-                -- magenta: Function declarations, exception handling, tags
-                magenta = "#eddaee",
-            },
-        },
-        config = function(_, opts)
-            require("aether").setup(opts)
-            vim.cmd.colorscheme("aether")
-
-            -- Enable hot reload
-            require("aether.hotreload").setup()
-        end,
-    },
-    {
-        "LazyVim/LazyVim",
-        opts = {
-            colorscheme = "aether",
-        },
-    },
+				-- Accent colors (base08-base0F)
+				base08 = "#9b584d", -- Variables, errors, red
+				base09 = "#ca887f", -- Integers, constants, orange
+				base0A = "#bb6d6c", -- Classes, types, yellow
+				base0B = "#9f6769", -- Strings, green
+				base0C = "#da7a6f", -- Support, regex, cyan
+				base0D = "#b97670", -- Functions, keywords, blue
+				base0E = "#9a8c8a", -- Keywords, storage, magenta
+				base0F = "#d7adad", -- Deprecated, brown/yellow
+			},
+		},
+	},
+	{
+		"LazyVim/LazyVim",
+		opts = {
+			colorscheme = "aether",
+		},
+	},
 }
