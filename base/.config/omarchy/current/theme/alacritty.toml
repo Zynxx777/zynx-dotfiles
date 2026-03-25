@@ -1,61 +1,37 @@
+# ────────────────────────────────────────────────────────────
+# Omarchy Custom Theme for Alacritty
+# Generated with Omarchist
+# ────────────────────────────────────────────────────────────
+
+[colors]
 [colors.primary]
-background = "#181c1f"
-foreground = "#fdf9f8"
+background = "#161616"
+foreground = "#f2f4f8"
 
 [colors.cursor]
-text = "#181c1f"
-cursor = "#fdf9f8"
-
-[colors.vi_mode_cursor]
-text = "#181c1f"
-cursor = "#fdf9f8"
-
-[colors.search.matches]
-foreground = "#181c1f"
-background = "#fdf9f8"
-
-[colors.search.focused_match]
-foreground = "CellBackground"
-background = "CellForeground"
-
-[colors.line_indicator]
-foreground = "None"
-background = "None"
-
-[colors.footer_bar]
-foreground = "#b18d85"
-background = "#fdf9f8"
+text = "#161616"
+cursor = "#f2f4f8"
 
 [colors.selection]
-text = "CellBackground"
-background = "CellForeground"
+text = "#161616"
+background = "#f2f4f8"
 
 [colors.normal]
-black = "#181c1f"
-red = "#9b584d"
-green = "#9f6769"
-yellow = "#bb6d6c"
-blue = "#b97670"
-magenta = "#9a8c8a"
-cyan = "#da7a6f"
-white = "#edbcb3"
+black = "#161616"
+red = "#3ddbd9"
+green = "#33b1ff"
+yellow = "#ee5396"
+blue = "#42be65"
+magenta = "#be95ff"
+cyan = "#ff7eb6"
+white = "#f2f4f8"
 
 [colors.bright]
-black = "#b18d85"
-red = "#ca887f"
-green = "#c79d9f"
-yellow = "#d7adad"
-blue = "#d7b2ae"
-magenta = "#c4bcbb"
-cyan = "#ecbeb9"
-white = "#fdf9f8"
-
-[colors.dim]
-black = "#fdf9f8"
-red = "#ca887f"
-green = "#c79d9f"
-yellow = "#d7adad"
-blue = "#d7b2ae"
-magenta = "#c4bcbb"
-cyan = "#ecbeb9"
-white = "#b18d85"
+black = "#525252"
+red = "#78a9ff"
+green = "#262626"
+yellow = "#393939"
+blue = "#dde1e6"
+magenta = "#ffffff"
+cyan = "#82cfff"
+white = "#08bdba"
