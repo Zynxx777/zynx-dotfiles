@@ -1,21 +1,21 @@
-    @define-color background     #161616;
-    @define-color foreground     #f2f4f8;
-    @define-color black          #161616;
-    @define-color red            #3ddbd9;
-    @define-color green          #33b1ff;
-    @define-color yellow         #ee5396;
-    @define-color blue           #42be65;
-    @define-color magenta        #be95ff;
-    @define-color cyan           #ff7eb6;
-    @define-color white          #f2f4f8;
-    @define-color bright_black   #525252;
-    @define-color bright_red     #78a9ff;
-    @define-color bright_green   #262626;
-    @define-color bright_yellow  #393939;
-    @define-color bright_blue    #dde1e6;
-    @define-color bright_magenta #ffffff;
-    @define-color bright_cyan    #82cfff;
-    @define-color bright_white   #08bdba;
+    @define-color background     #020007;
+    @define-color foreground     #ffffff;
+    @define-color black          #020007;
+    @define-color red            #37277d;
+    @define-color green          #643aad;
+    @define-color yellow         #9845c6;
+    @define-color blue           #9b49c8;
+    @define-color magenta        #9865cf;
+    @define-color cyan           #b895dd;
+    @define-color white          #dfd0f0;
+    @define-color bright_black   #9c6cd0;
+    @define-color bright_red     #5b43cd;
+    @define-color bright_green   #a87cd8;
+    @define-color bright_yellow  #cb97df;
+    @define-color bright_blue    #cd9ce1;
+    @define-color bright_magenta #cdb5e8;
+    @define-color bright_cyan    #f6ebe3;
+    @define-color bright_white   #ffffff;
 
     @define-color accent_bg_color @blue;
     @define-color accent_fg_color @background;
@@ -31,11 +31,11 @@
     @define-color sidebar_backdrop_color @black;
     @define-color sidebar_shade_color @black;
 
-    @define-color headerbar_bg_color @background;
+    @define-color headerbar_bg_color alpha(@foreground, 0.1);
     @define-color headerbar_fg_color @foreground;
     @define-color headerbar_backdrop_color @black;
     @define-color headerbar_shade_color @black;
-    @define-color card_bg_color @background;
+    @define-color card_bg_color alpha(@foreground, 0.1);
     @define-color card_fg_color @foreground;
 
     @define-color popover_bg_color @black;
@@ -160,7 +160,7 @@
         background-color: @red;
     }
 
-    /* .svg-icon {
+    .svg-icon {
         filter: invert(79%) sepia(18%) saturate(611%) hue-rotate(192deg)
             brightness(103%) contrast(94%);
-    } */
+    }
