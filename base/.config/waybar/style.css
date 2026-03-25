@@ -1,187 +1,206 @@
 @import "../omarchy/current/theme/waybar.css";
 
-/* ============================= */
-/* COLOR DEFINITIONS (RETRO-CP)  */
-/* ============================= */
-@define-color cp-black   #000000;
-@define-color cp-red     #C14F3D;
-@define-color cp-orange  #E5A359;
-@define-color cp-green   #7B9C73;
-@define-color cp-gray    #BDBDBD;
-@define-color cp-cream   #E6E1D3;
-@define-color cp-dark    #1A1A1A;
+/* ====================================================
+   MATERIAL YOU / DYNAMIC COLOR CONFIGURATION
+   ==================================================== */
 
-/* ============================= */
-/* GLOBAL RESET */
-/* ============================= */
+@define-color my-pill-bg alpha(@background, 0.4);
+@define-color my-drawer-bg alpha(@foreground, 0.08);
+@define-color my-text @foreground;
+@define-color my-accent @color4;
+@define-color my-warning @color3;
+@define-color my-critical @color1;
 
-* {
-  font-family: "JetBrainsMono Nerd Font";
-  font-size: 15px;
-  font-weight: bold;
-  min-height: 0;
-  margin: 0;
-  padding: 0;
-}
 
-box,
-.modules-left,
-.modules-center,
-.modules-right {
-  margin: 0;
-  padding: 0;
-}
-
-/* ============================= */
-/* WAYBAR WINDOW */
-/* ============================= */
-
+/* --- Base Bar --- */
 window#waybar {
-  background-color: transparent;
-  border: none;
-  margin-top: 8px;
+    background-color: transparent;
+    color: @my-text;
+    font-family: 'Adwaita Mono';
+    font-size: 14px;
 }
 
+/* --- The Modern Floating Pills --- */
 .modules-left,
 .modules-center,
 .modules-right {
-  background-color: @cp-black;
-  border: 5px solid @cp-black;
-  border-radius: 5px;
+    background-color: @my-pill-bg;
+    border: none;
+    border-radius: 20px;
+    padding: 0px 14px;
 }
 
-/* ============================= */
-/* MODULE BASE STYLE */
-/* ============================= */
-
-#tray, #window, #mpris, #cpu, #clock, #battery, #network, 
-#memory, #backlight, #bluetooth, #pulseaudio, #custom-weather, 
-#custom-update, #idle_inhibitor, #custom-omarchy, #custom-voxtype,
-#custom-updatespacman {
-  margin: 0 2px;
-  padding: 0 8px;
-  min-width: 14px;
-  border-radius: 2px;
+/* --- Module Spacing inside Pills --- */
+#custom-omarchy,
+#workspaces,
+#custom-update,
+#clock,
+#mpris,
+#custom-media-icon,
+#network,
+#pulseaudio,
+#battery,
+#tray,
+#custom-hw-expand,
+#cpu,
+#bluetooth,
+#backlight,
+#custom-gps {
+    padding: 0 6px;
+    margin: 0px 2px;
 }
 
-/* ============================= */
-/* WORKSPACES */
-/* ============================= */
+/* --- The Arch Logo --- */
+#custom-omarchy {
+    color: @foreground;
+    font-size: 18px;
+    padding-right: 12px;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
 
+/* --- Workspaces --- */
 #workspaces button {
-  margin: 0 2px 0 0;
-  padding: 0 4px;
-  border-radius: 2px;
-  background-color: @cp-dark;
-  color: @cp-gray;
+    color: @my-text;
+    opacity: 0.8;
+    padding: 0 6px;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+#workspaces button.empty {
+    opacity: 0.4;
 }
 
 #workspaces button.active {
-  background-color: @cp-orange;
-  color: @cp-black;
+    opacity: 1;
+    color: @my-accent;
+    text-shadow: 0 0 8px @my-accent, 0 0 15px alpha(@my-accent, 0.7);
+    background-color: transparent;
+}
+
+#workspaces button.urgent {
+    color: @my-critical;
+    text-shadow: 0 0 5px alpha(@my-critical, 0.6);
+    background-color: transparent;
 }
 
 #workspaces button:hover {
-  background-color: @cp-red;
-  color: @cp-black;
+    background: transparent;
+    color: @my-accent;
+    text-shadow: 0 0 5px alpha(@my-accent, 0.5);
 }
 
-/* ============================= */
-/* COLORS & MODULES */
-/* ============================= */
-
-#window {
-  background-color: @cp-cream;
-  color: @cp-black;
+/* --- Center Pill Adjustments --- */
+#clock {
+    font-weight: bold;
+    padding-left: 10px;
 }
 
-#custom-omarchy {
-  background-color: @cp-red;
-  color: @cp-dark;
-  font-size: 20px;
+#custom-media-icon {
+    color: @foreground;
+    font-size: 16px;
 }
 
-/* Priority Info (Updates/CPU) */
-#custom-update, #custom-updatespacman, #cpu {
-  background-color: @cp-orange;
-  color: @cp-black;
+#mpris {
+    font-weight: bold;
+    transition: color 0.3s ease, opacity 0.3s ease;
 }
 
-/* Utility Info (Clock/Tray) */
-#clock, #idle_inhibitor, #custom-weather, #tray {
-  background-color: @cp-dark;
-  color: @cp-cream;
+/* --- Omarchy Indicators --- */
+#custom-screenrecording-indicator,
+#custom-idle-indicator,
+#custom-notification-silencing-indicator,
+#custom-voxtype {
+    padding: 0 6px;
+    margin: 0;
+    font-size: 16px;
 }
 
-/* System Stats */
-#battery {
-  background-color: @cp-green;
-  color: @cp-black;
-}
-
-#memory {
-  background-color: @cp-gray;
-  color: @cp-black;
-}
-
-#network {
-  background-color: @cp-green;
-  color: @cp-black;
-}
-
-#pulseaudio {
-  background-color: @cp-red;
-  color: @cp-black;
-}
-
-#backlight {
-  background-color: @cp-gray;
-  color: @cp-black;
-}
-
-#bluetooth {
-  background-color: @cp-gray;
-  color: @cp-black;
-}
-
-/* ============================= */
-/* HOVER EFFECTS */
-/* ============================= */
-
-#clock:hover, #cpu:hover, #memory:hover, #battery:hover, #network:hover, #pulseaudio:hover {
-  background-color: @cp-cream;
-  color: @cp-black;
-}
-
-/* ============================= */
-/* WARNINGS & CRITICAL */
-/* ============================= */
-
-#cpu.critical, #memory.critical, #battery.critical {
-  background-color: @cp-red;
-  color: @cp-cream;
-  animation: blink-warning 0.5s linear infinite alternate;
-}
-
-@keyframes blink-warning {
-  to { background-color: @cp-black; color: @cp-red; }
-}
-
-/* ============================= */
-/* TOOLTIP */
-/* ============================= */
-
-tooltip {
-  background-color: @cp-dark;
-  border: 1px solid @cp-orange;
-  border-radius: 4px;
-}
-
-tooltip label {
-  color: @cp-cream;
-}
-
+#custom-screenrecording-indicator.active,
 #custom-idle-indicator.active,
-#custom-notification-silencing-indicator.active {
-  color: #a55555;
+#custom-notification-silencing-indicator.active,
+#custom-voxtype.recording {
+    color: @my-critical;
+}
+
+/* --- The Expandable Drawers --- */
+#group-hardware-drawer,
+#group-media-drawer {
+    background-color: @my-drawer-bg;
+    border-radius: 16px;
+    padding: 0 6px;
+    margin: 2px 4px;
+}
+
+#custom-hw-expand {
+    color: @my-text;
+    opacity: 0.8;
+}
+
+#backlight,
+#backlight label {
+    color: @my-text;
+}
+
+#backlight.high,
+#backlight.high label {
+    color: @my-warning;
+}
+
+#backlight.warning,
+#backlight.warning label {
+    color: @my-critical;
+}
+
+/* --- Dynamic Indicator States --- */
+
+/* --- Dynamic Indicator States --- */
+
+#battery.warning,
+#battery.warning label {
+    color: @my-warning;
+}
+
+#battery.critical,
+#battery.critical label {
+    color: @my-critical;
+}
+
+/* Active / Connected states */
+#custom-gps.on,
+#custom-gps.on label,
+#bluetooth.connected,
+#bluetooth.connected label,
+#battery.charging,
+#battery.charging label,
+#mpris.playing,
+#mpris.playing label {
+    color: @foreground;
+}
+
+/* Inactive / Disconnected / Paused states */
+#custom-gps.off,
+#custom-gps.off label,
+#network.disconnected,
+#network.disconnected label,
+#bluetooth.off,
+#bluetooth.off label,
+#bluetooth.disabled,
+#bluetooth.disabled label,
+#pulseaudio.muted,
+#pulseaudio.muted label {
+    color: @foreground;
+}
+
+#mpris.paused,
+#mpris.paused label {
+    color: @my-accent;
+}
+
+#mpris.stopped,
+#mpris.stopped label {
+    opacity: 0.4;
 }
